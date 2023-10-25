@@ -16,6 +16,7 @@
   "dependencies": {
     "dialog": "^0.0.1",
     "menu": "^0.0.1",
-    "redux": "^4.2.1"
+    "redux": "^4.2.1",
+    "redux-plugin-creator": "github:fernandogmar/redux-plugin-creator"
   }
 }
