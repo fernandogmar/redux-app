@@ -1,5 +1,5 @@
 import test from 'tape';
-import MENU_OPEN, { menuUniqueOpenAction } from 'menu/unique-toggle.action.js';
+import MENU_OPEN, { menuUniqueOpenAction } from 'menu/unique-open.action.js';
 import { reduxPluginCreatorMetaCarbonCopyRequiredAction as metaCarbonCopyRequiredAction } from 'redux-plugin-creator/meta-carbon-copy-required.action.js';
 
 const TEST_NAME = 'menuUniqueOpenActionModule';
