@@ -1,0 +1,44 @@
+{
+    "name": "menu",
+    "version": "0.0.1",
+    "description": "A menu plugin for redux",
+    "main": "./src/index.js",
+    "type": "module",
+    "exports": {
+        ".": "./src/index.js",
+        "./*.action.js": "./src/actions/*/*.action.js",
+        "./*.reducer.js": "./src/reducers/*/*.reducer.js",
+        "./*.selector.js": "./src/selectors/*/*.selector.js",
+        "./tests/*.action.js": "./src/actions/*/*.test.js",
+        "./tests/*.reducer.js": "./src/reducers/*/*.test.js",
+        "./tests/*.selector.js": "./src/selectors/*/*.test.js",
+        "./*.test.js": "./src/tests/*.test.js",
+        "./*.js": "./src/*.js"
+    },
+    "scripts": {
+        "test": "tape src{/**,}/*.test.js"
+    },
+    "keywords": [
+        "redux",
+        "plugin",
+        "menu"
+    ],
+    "author": "@fernandogmar",
+    "license": "ISC",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/fernandogmar/menu.git"
+    },
+    "bugs": {
+        "url": "https://github.com/fernandogmar/menu/issues"
+    },
+    "homepage": "https://github.com/fernandogmar/menu#readme",
+    "peerDependencies": {
+        "ramda": "0.29.x",
+        "redux": "4.x",
+        "redux-plugin-creator": "github:fernandogmar/redux-plugin-creator"
+    },
+    "devDependencies": {
+        "tape": "^5.7.1"
+    }
+}
