@@ -1,0 +1,21 @@
+{
+  "name": "store",
+  "version": "0.0.1",
+  "description": "Redux store of the app",
+  "type": "module",
+  "main": "./src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "redux",
+    "store"
+  ],
+  "author": "@fernandogmar",
+  "license": "ISC",
+  "dependencies": {
+    "dialog": "^0.0.1",
+    "menu": "^0.0.1",
+    "redux": "^4.2.1"
+  }
+}

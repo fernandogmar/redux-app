@@ -24,8 +24,8 @@ const state = (menu_state = INITIAL_STATE, action = {}) => {
 };
 const { REDUCER_NAME, menuStateReducer } = registerReducer(state);
 
-const open = (menu_state) => (menu_state.is_open) ? menu_state : { ...menu_state, is_open: true };
 const close = (menu_state) => (!menu_state.is_open) ? menu_state : { ...menu_state, is_open: false };
+const open = (menu_state) => (menu_state.is_open) ? menu_state : { ...menu_state, is_open: true };
 const toggle = (menu_state) => ({ ...menu_state, is_open: !menu_state.is_open });
 
 export {
