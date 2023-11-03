@@ -5,10 +5,24 @@ import {
     //MANY_GROUPS_TO_ONE_PLUGIN,
     ONE_GROUP_TO_ONE_PLUGIN,
     ONE_GROUP_TO_MANY_PLUGINS,
-    configureDefaultPluginRelationship,
-    configurePlugin
+    getPluginNames,
+    getLoggerNames,
+    //registerPluginAsLogger
 } from 'redux-plugin-creator';
+import reduxPluginCreatorStateConfigurator, {
+    configureDefaultPluginRelationship,
+    configureNameMappers,
+    configurePluginRelationship
+} from 'redux-plugin-creator/state.configurator.js';
 
-configureDefaultPluginRelationship(ONE_GROUP_TO_ONE_PLUGIN);
-configurePlugin(DIALOG, ONE_GROUP_TO_MANY_PLUGINS);
-configurePlugin(MENU, ONE_GROUP_TO_MANY_PLUGINS);
+const getConfiguration = (initial_state) => reduxPluginCreatorStateConfigurator(initial_state)
+    .map(configureDefaultPluginRelationship(ONE_GROUP_TO_ONE_PLUGIN))
+    .map(configurePluginRelationship(DIALOG, ONE_GROUP_TO_MANY_PLUGINS))
+    .map(configurePluginRelationship(MENU, ONE_GROUP_TO_MANY_PLUGINS))
+    .map(configureNameMappers(getLoggerNames(), getPluginNames()))
+    .get();
+
+
+export {
+    getConfiguration
+};
